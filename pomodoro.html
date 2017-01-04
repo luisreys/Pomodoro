@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta lang="es">
+    <title>Pomodore clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+    <div class="container-fluid" id="main-head">
+      <div class="row">
+        <div class="col-md-3 h1">Pomodoro Clock</div>
+        <div class="col-md-9"> </div>
+      </div>
+    </div>
+    <div class="container show-top-margin separate-rows tall-rows">
+      <div class="row show-grid">
+        <div class="col-md-5">Parte Reloj</div>
+        <div class="col-md-7">
+          <h2>Ajustes</h3>
+          <div class="form-horizontal">
+
+            <div class="form-group">
+                <label for="Work time" class="col-sm-4 control-label">Work Time:</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="workTime" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Rest time" class="col-sm-4 control-label">Rest Time:</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="restTime" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Long rest" class="col-sm-4 control-label">Long Rest:</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="longRest" >
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-1">
+                    <button type="submit" class="btn btn-default">Work!</button>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
