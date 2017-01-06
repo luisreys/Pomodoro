@@ -18,58 +18,75 @@
         <div class="col-md-9"> </div>
       </div>
     </div>
- <!-- dsfñgkmdsloñjknlñofnañlsojkndf -->
+
     <div class="container show-top-margin separate-rows tall-rows" >
       <div class="row show-grid" >
 
-        <div class="col-md-6" id="time-screen">
+        <div class="col-lg-5   col-md-5   col-sm-10 col-sm-offset-1" id="time-screen">
           <div class="row ">
-            <div class="col-md-2 col-md-offset-5 h1">
-              <div class="h1" id="current-time">
-                25
+            <div class="col-sm-12">
+              <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-1 col-sm-offset-5">
+                <div class="h1" id="current_time">
+                  25
+                </div>
               </div>
             </div>
-            <div class="col-md-2 col-md-offset-5">
+
+            <div class="col-md-2 col-md-offset-5  col-sm-1 col-sm-offset-5">
               <h4><small>minutes</small></h4>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6" id="settings-screen">
-          <div class="col-md-8 col-md-offset-2">
-            <h2>Settings</h3>
-            <div class="form-horizontal">
+        <div class="col-lg-5 col-md-5  col-sm-10 col-sm-offset-1" id="settings-screen">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-8 col-sm-offset-2">
+              <h2>Settings</h3>
+              <div class="form-horizontal">
 
-              <div class="form-group">
-                  <label for="Work time" class="col-sm-4 control-label">Work Time:</label>
-                  <div class="col-md-3">
-                    <input type="text" class="form-control" id="workTime" autocomplete="off" value="25">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="Rest time" class="col-sm-4 control-label">Rest Time:</label>
-                  <div class="col-md-3">
-                    <input type="text" class="form-control" id="restTime" autocomplete="off" value="5">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="Long rest" class="col-sm-4 control-label">Long Rest:</label>
-                  <div class="col-md-3">
-                    <input type="text" class="form-control" id="longRest" autocomplete="off" value="15">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-md-offset-6 col-md-1">
-                      <button type="submit" class="btn btn-default">Work!</button>
-                  </div>
-              </div>
+                <div class="form-group">
+                    <label for="Work time" class="col-lg-5 col-md-5 col-sm-5 control-label">Work Time:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                      <input type="text" class="form-control" id="workTime" autocomplete="off" value="25" max="60" min="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Rest time" class="col-lg-5 col-md-5 col-sm-5 control-label">Rest Time:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                      <input type="text" class="form-control" id="restTime" autocomplete="off" value="5" max="60" min="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Long rest" class="col-lg-5 col-md-5 col-sm-5 control-label">Long Rest:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                      <input type="text" class="form-control" id="longRest" autocomplete="off" value="15" max="60" min="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-6 col-md-1">
+                        <button type="submit" class="btn btn-default" onclick="start()">Start</button>
+                    </div>
+                </div>
 
+              </div>
             </div>
           </div>
+
         </div>
 
       </div>
     </div>
+
+    <script>
+        var current_time = document.getElementById('current_time');
+        console.log('holaaa');
+        console.log(current_time);
+        function start(){
+            var getTime1 = document.getElementById('workTime').value;
+            console.log(getTime1);
+            current_time.innerHTML = getTime1;
+        }
+    </script>
 
   </body>
 </html>
