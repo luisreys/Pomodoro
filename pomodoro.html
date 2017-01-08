@@ -97,61 +97,77 @@
             var minutes = parseInt(getTime1);
             var seconds = 0;
 
-            console.log(getTime1);
-            console.log(getTime2);
-            console.log(getTime3);
+            var times = [parseInt(getTime1), parseInt(getTime2), parseInt(getTime3)];
+            var x = 0;
+
+            console.log(times[0]);
+            console.log(times[1]);
+            console.log(times[2]);
             console.log(current_time_m.innerHTML);
             console.log(current_time_s.innerHTML);
 
-            current_time_m.innerHTML = getTime1;
+            countDownArray(times, x);
+            console.log('Rest time');
+
+
+
+        }
+
+        function countDownArray(times, x){
+            var minutes = times[x];
+            var seconds = 0;
+            current_time_m.innerHTML = minutes;
             current_time_s.innerHTML = '00';
             minutes = minutes - 1;
-              var setIntervalID = setInterval(function(){
+            var setIntervalID = setInterval(function(){
+              if (seconds == 0) {
+                seconds = 59;
+              }else {
+                seconds = seconds - 1;
+              }
 
-                if (seconds == 0) {
-                  seconds = 59;
-                }else {
-                  seconds = seconds - 1;
+              if (seconds == 59 && minutes > 0) {
+                minutes = minutes - 1;
+              }
+
+              current_time_m.innerHTML = minutes;
+              current_time_s.innerHTML = seconds;
+
+              if ((minutes == 0) && (seconds == 0)) {
+                clearInterval(setIntervalID);
+                x++;
+                console.log('estoy aquiiiii' + x + times);
+                if (x < 3) {
+                  countDownArray(times, x);
                 }
+              }
+            }, 1000);
+        }
 
-                if (seconds == 1 && minutes > 0) {
-                  minutes = minutes - 1;
-                }
+        function countDown(minutes, seconds){
+          current_time_m.innerHTML = minutes;
+          current_time_s.innerHTML = '00';
+          minutes = minutes - 1;
+            var setIntervalID = setInterval(function(){
 
-                current_time_m.innerHTML = minutes;
-                current_time_s.innerHTML = seconds;
+              if (seconds == 0) {
+                seconds = 59;
+              }else {
+                seconds = seconds - 1;
+              }
 
-                if ((minutes == 0) && (seconds == 0)) {
-                  clearInterval(setIntervalID);
-                }
-              }, 1000);
+              if (seconds == 1 && minutes > 0) {
+                minutes = minutes - 1;
+              }
 
-              console.log('Rest time');
+              current_time_m.innerHTML = minutes;
+              current_time_s.innerHTML = seconds;
 
-              minutes = parseInt(getTime2);;
-              seconds = 00;
-              current_time_m.innerHTML = getTime2;
-              current_time_s.innerHTML = '00';
-              minutes = minutes - 1;
-                var setIntervalID = setInterval(function(){
+              if ((minutes == 0) && (seconds == 0)) {
+                clearInterval(setIntervalID);
 
-                  if (seconds == 0) {
-                    seconds = 59;
-                  }else {
-                    seconds = seconds - 1;
-                  }
-
-                  if (seconds == 1 && minutes > 0) {
-                    minutes = minutes - 1;
-                  }
-
-                  current_time_m.innerHTML = minutes;
-                  current_time_s.innerHTML = seconds;
-
-                  if ((minutes == 0) && (seconds == 0)) {
-                    clearInterval(setIntervalID);
-                  }
-                }, 1000);
+              }
+            }, 1000);
         }
     </script>
 
