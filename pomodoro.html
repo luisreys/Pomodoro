@@ -21,23 +21,30 @@
 
     <div class="container show-top-margin separate-rows tall-rows" >
       <div class="row show-grid" >
+        <!-- Timer section -->
 
-        <div class="col-lg-5   col-md-5   col-sm-10 col-sm-offset-1" id="time-screen">
-          <div class="row ">
-            <div class="col-sm-12">
-              <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-1 col-sm-offset-5">
-                <div class="h1" id="current_time">
-                  25
-                </div>
+        <div class="col-lg-5 col-md-5 col-sm-10 col-sm-offset-1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p></p></div>
+            <!-- Minutes -->
+            <div class="col-lg-2 col-lg-offset-4 col-md-2 col-md-2 col-lg-offset-4 col-sm-2 col-sm-offset-4">
+              <div class="h1" id="current_time_m">
+                25
               </div>
-            </div>
-
-            <div class="col-md-2 col-md-offset-5  col-sm-1 col-sm-offset-5">
               <h4><small>minutes</small></h4>
             </div>
+            <!-- Seconds -->
+            <div class="col-lg-2 col-md-2 col-md-2 col-sm-2">
+              <div class="h1" id="current_time_s">
+                00
+              </div>
+              <h4><small>seconds</small></h4>
+            </div>
+
           </div>
         </div>
 
+        <!-- Settings section  -->
         <div class="col-lg-5 col-md-5  col-sm-10 col-sm-offset-1" id="settings-screen">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-8 col-sm-offset-2">
@@ -78,23 +85,73 @@
     </div>
 
     <script>
-        var current_time = document.getElementById('current_time');
+        var current_time_m = document.getElementById('current_time_m');
+        var current_time_s = document.getElementById('current_time_s');
+        console.log(current_time_s);
+        console.log(current_time_m);
 
-
-        console.log('holaaa');
-        console.log(current_time);
         function start(){
             var getTime1 = document.getElementById('workTime').value;
             var getTime2 = document.getElementById('restTime').value;
             var getTime3 = document.getElementById('longRest').value;
-            var i = getTime1;
+            var minutes = parseInt(getTime1);
+            var seconds = 0;
+
             console.log(getTime1);
-            current_time.innerHTML = getTime1;
+            console.log(getTime2);
+            console.log(getTime3);
+            console.log(current_time_m.innerHTML);
+            console.log(current_time_s.innerHTML);
 
-            while (i != 0) {
+            current_time_m.innerHTML = getTime1;
+            current_time_s.innerHTML = '00';
+            minutes = minutes - 1;
+              var setIntervalID = setInterval(function(){
 
-            }
+                if (seconds == 0) {
+                  seconds = 59;
+                }else {
+                  seconds = seconds - 1;
+                }
 
+                if (seconds == 1 && minutes > 0) {
+                  minutes = minutes - 1;
+                }
+
+                current_time_m.innerHTML = minutes;
+                current_time_s.innerHTML = seconds;
+
+                if ((minutes == 0) && (seconds == 0)) {
+                  clearInterval(setIntervalID);
+                }
+              }, 1000);
+
+              console.log('Rest time');
+
+              minutes = parseInt(getTime2);;
+              seconds = 00;
+              current_time_m.innerHTML = getTime2;
+              current_time_s.innerHTML = '00';
+              minutes = minutes - 1;
+                var setIntervalID = setInterval(function(){
+
+                  if (seconds == 0) {
+                    seconds = 59;
+                  }else {
+                    seconds = seconds - 1;
+                  }
+
+                  if (seconds == 1 && minutes > 0) {
+                    minutes = minutes - 1;
+                  }
+
+                  current_time_m.innerHTML = minutes;
+                  current_time_s.innerHTML = seconds;
+
+                  if ((minutes == 0) && (seconds == 0)) {
+                    clearInterval(setIntervalID);
+                  }
+                }, 1000);
         }
     </script>
 
