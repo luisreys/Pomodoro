@@ -1,7 +1,8 @@
 var current_time_m = document.getElementById('current_time_m');
 var current_time_s = document.getElementById('current_time_s');
-console.log(current_time_s);
-console.log(current_time_m);
+var audio = new Audio('sound.mp3');
+//console.log(current_time_s);
+//console.log(current_time_m);
 
 var y = 1;
 var x = 1;
@@ -52,8 +53,13 @@ function countDownArray(times, x, y){
 
       if ((minutes == 0) && (seconds == 0)) {
         clearInterval(setIntervalID);
-        console.log('Im here! '+ times + ' ' + x + ' ' + y);
-        countDownArray(times, x+1, y);
+        audio.play();
+        var boton = document.getElementById('miBoton').addEventListener('click', function(){
+          console.log('aquii!');
+          countDownArray(times, x+1, y);
+          audio.pause();
+        });
+
       }
-    }, 1000);
+    }, 100);
 }
