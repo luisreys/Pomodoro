@@ -15,7 +15,7 @@
 
     <div class="container-fluid" id="main-head">
       <div class="row">
-        <div class="col-md-3 h1"><b>Pomodoro Clock</b></div>
+        <div class="col-md-3 col-xs-10 col-xs-offset-1 h1"><b>Pomodoro Clock</b></div>
         <div class="col-md-9"> </div>
       </div>
     </div>
@@ -24,18 +24,18 @@
       <div class="row show-grid" >
         <!-- Timer section -->
 
-        <div class="col-lg-5 col-md-5 col-sm-10 col-sm-offset-1">
+        <div class="col-lg-5 col-md-5 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><p></p></div>
             <!-- Minutes -->
-            <div class="col-lg-2 col-lg-offset-4 col-md-2 col-md-2 col-lg-offset-4 col-sm-2 col-sm-offset-4">
+            <div class="col-lg-2 col-lg-offset-4 col-md-2 col-md-2 col-lg-offset-4 col-sm-2 col-sm-offset-4 col-xs-2 col-xs-offset-4">
               <div class="h1" id="current_time_m">
                 25
               </div>
               <h4><small>minutes</small></h4>
             </div>
             <!-- Seconds -->
-            <div class="col-lg-2 col-md-2 col-md-2 col-sm-2">
+            <div class="col-lg-2 col-md-2 col-md-2 col-sm-2 col-xs-2">
               <div class="h1" id="current_time_s">
                 00
               </div>
@@ -46,33 +46,33 @@
         </div>
 
         <!-- Settings section  -->
-        <div class="col-lg-5 col-md-5  col-sm-10 col-sm-offset-1" id="settings-screen">
+        <div class="col-lg-5 col-md-5  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" id="settings-screen">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2  col-sm-8 col-sm-offset-2">
               <h2>Settings</h3>
               <div class="form-horizontal">
 
                 <div class="form-group">
-                    <label for="Work time" class="col-lg-5 col-md-5 col-sm-5 control-label">Work Time:</label>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="Work time" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label">Work Time:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                       <input type="text" class="form-control" id="workTime" autocomplete="off" value="25" max="60" min="0">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Rest time" class="col-lg-5 col-md-5 col-sm-5 control-label">Rest Time:</label>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="Rest time" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label">Rest Time:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                       <input type="text" class="form-control" id="restTime" autocomplete="off" value="5" max="60" min="0">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Long rest" class="col-lg-5 col-md-5 col-sm-5 control-label">Long Rest:</label>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="Long rest" class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label">Long Rest:</label>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                       <input type="text" class="form-control" id="longRest" autocomplete="off" value="15" max="60" min="0">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-6 col-md-1">
-                        <button type="submit" class="btn btn-default" onclick="start()">Start</button>
+                        <button type="submit" class="btn btn-primary" onclick="start()">Start</button>
                     </div>
                 </div>
 
