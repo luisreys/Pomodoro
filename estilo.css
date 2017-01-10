@@ -26,9 +26,18 @@
     text-align:center;
 }
 
+.modal-bg{
+  display: none;
 
-/*div{
-  border: solid;
-  border-width: 1px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
 }
-*/
+
+.modal{
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 150px;
+}
+
+.modal-content{
+  padding: 20px;
+}

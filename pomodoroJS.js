@@ -1,12 +1,11 @@
 var current_time_m = document.getElementById('current_time_m');
 var current_time_s = document.getElementById('current_time_s');
+var modal = document.getElementById('myModal');
 var audio = new Audio('sound.mp3');
-//console.log(current_time_s);
-//console.log(current_time_m);
 
 var y = 1;
 var x = 1;
-
+var times;
 var minutes;
 var seconds;
 
@@ -16,7 +15,7 @@ function start(){
     var getTime3 = document.getElementById('longRest').value;
     var minutes = parseInt(getTime1);
 
-    var times = [parseInt(getTime1), parseInt(getTime2), parseInt(getTime3)];
+    times = [parseInt(getTime1), parseInt(getTime2), parseInt(getTime3)];
 
     countDownArray(times, x, y);
 }
@@ -54,12 +53,16 @@ function countDownArray(times, x, y){
       if ((minutes == 0) && (seconds == 0)) {
         clearInterval(setIntervalID);
         audio.play();
-        var boton = document.getElementById('miBoton').addEventListener('click', function(){
-          console.log('aquii!');
-          countDownArray(times, x+1, y);
-          audio.pause();
-        });
-
+        modal.style.display = "block";
+        var boton = document.getElementById('miBoton').addEventListener('click', myFunction);
       }
-    }, 100);
+    }, 1000);
+}
+
+function myFunction(){
+  console.log('aquii!');
+  countDownArray(times, x+1, y);
+  audio.pause();
+  modal.style.display = "none";
+  document.getElementById('miBoton').removeEventListener('click', myFunction);
 }
