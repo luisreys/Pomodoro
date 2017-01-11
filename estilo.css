@@ -64,3 +64,15 @@ body{
     padding-top: 50px;
   }
 }
+
+a{
+  color: #fff;
+}
+
+#footer{
+  position: fixed;;;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  color: #fff;
+}
