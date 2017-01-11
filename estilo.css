@@ -1,36 +1,13 @@
+body{
+  background-color: #00ffcc;
+}
+
 #main-head{
   background-color: #009999 !important;
   border-bottom: solid;
   border-bottom-width: 1px;
   padding: 1%;
   font-family: 'Montserrat', sans-serif;
-}
-
-#time-screen{
-
-
-}
-
-#settings-screen{
-
-}
-
-.parent {
-    display: table;
-    table-layout: fixed;
-}
-
-.child {
-    display:table-cell;
-    vertical-align:middle;
-    text-align:center;
-}
-
-.modal-bg{
-  display: none;
-
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
 }
 
 .modal{
@@ -40,4 +17,50 @@
 
 .modal-content{
   padding: 20px;
+}
+
+#current_time_m{
+
+}
+
+#minutes_box{
+  text-align: center;
+  color: #fff;
+  background-color: #009999 !important;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+#current_time_s{
+
+}
+
+#seconds_box{
+  margin-left: 2px;
+  text-align: center;
+  color: #fff;
+  background-color: #009999 !important;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+
+@media only screen and (min-width: 992px){
+  #left_side{
+    padding-top: 220px;
+  }
+
+  #right_side{
+    padding-top: 150px;
+  }
+}
+
+@media only screen and (max-width: 992px){
+  #left_side{
+    padding-top: 100px;
+  }
+
+  #right_side{
+    padding-top: 50px;
+  }
 }
