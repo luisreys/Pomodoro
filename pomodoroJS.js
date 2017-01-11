@@ -2,7 +2,7 @@ var current_time_m = document.getElementById('current_time_m');
 var current_time_s = document.getElementById('current_time_s');
 var modal = document.getElementById('myModal');
 var audio = new Audio('sound.mp3');
-
+var flag = true;
 var y = 1;
 var x = 1;
 var times;
@@ -10,14 +10,17 @@ var minutes;
 var seconds;
 
 function start(){
-    var getTime1 = document.getElementById('workTime').value;
-    var getTime2 = document.getElementById('restTime').value;
-    var getTime3 = document.getElementById('longRest').value;
-    var minutes = parseInt(getTime1);
+    if (flag == true) { // With it the user only can use one time the start button
+        flag = false;
+        var getTime1 = document.getElementById('workTime').value;
+        var getTime2 = document.getElementById('restTime').value;
+        var getTime3 = document.getElementById('longRest').value;
+        var minutes = parseInt(getTime1);
 
-    times = [parseInt(getTime1), parseInt(getTime2), parseInt(getTime3)];
+        times = [parseInt(getTime1), parseInt(getTime2), parseInt(getTime3)];
 
-    countDownArray(times, x, y);
+        countDownArray(times, x, y);
+    }
 }
 
 function countDownArray(times, x, y){
